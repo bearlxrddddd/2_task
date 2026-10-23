@@ -45,6 +45,7 @@ $statuses = ['новый', 'в обработке', 'доставлен', 'от�
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заказы</title>
+    <link rel="stylesheet" href="/css/view_orders.css">
 </head>
 <body>
     <h1>Заказы</h1>
@@ -80,21 +81,21 @@ $statuses = ['новый', 'в обработке', 'доставлен', 'от�
 
     <table>
         <tr>
-            <th>ID</th>
-            <th>Клиент</th>
-            <th>Дата</th>
-            <th>Статус</th>
-            <th>Сумма</th>
-            <th>Действия</th>
+            <th class="tables_element">ID</th>
+            <th class="tables_element">Клиент</th>
+            <th class="tables_element">Дата</th>
+            <th class="tables_element">Статус</th>
+            <th class="tables_element">Сумма</th>
+            <th class="tables_element">Действия</th>
         </tr>
         <?php foreach ($orders as $order) : ?>
         <tr>
-            <th><?php echo $order['id'] ?></th>
-            <th><?php echo htmlspecialchars($order['client_name'] ?? '—') ?></th>
-            <th><?php echo htmlspecialchars($order['data']) ?></th>
-            <th><?php echo htmlspecialchars($order['status']) ?></th>
-            <th><?php echo htmlspecialchars($order['price']) ?></th>
-            <th>
+            <th class="tables_element"><?php echo $order['id'] ?></th>
+            <th class="tables_element"><?php echo htmlspecialchars($order['client_name'] ?? '—') ?></th>
+            <th class="tables_element"><?php echo htmlspecialchars($order['data']) ?></th>
+            <th class="tables_element"><?php echo htmlspecialchars($order['status']) ?></th>
+            <th class="tables_element"><?php echo htmlspecialchars($order['price']) ?></th>
+            <th class="tables_element">
                 <a href="/views/view_order_detail.php?id=<?php echo $order['id'] ?>">Подробнее</a>
                 <a href="/update/update_status_order.php?id=<?php echo $order['id'] ?>">Изменить статус</a>
             </th>
